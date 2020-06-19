@@ -1,5 +1,5 @@
 # QRLJacker - QRLJacking Exploitation Framework ![Build Status](https://img.shields.io/badge/Version-2.1.1-green.svg)
-### O QRLJacker é uma estrutura de exploração altamente personalizável para demonstrar "[QRLJacking Attack Vector](https://www.owasp.org/index.php/Qrljacking)" para mostrar como é fácil seqüestrar serviços que dependem do QR Code como um método de autenticação e login, o objetivo principal é aumentar a conscientização de segurança sobre todos os serviços usando o QR Code como uma maneira principal de conectar usuários a diferentes serviços!
+### O QRLJacker é uma estrutura de exploração altamente personalizável para demonstrar "[Vetor de ataque de QRLJacking](https://www.owasp.org/index.php/Qrljacking)" para mostrar como é fácil seqüestrar serviços que dependem do QR Code como um método de autenticação e login, o objetivo principal é aumentar a conscientização de segurança sobre todos os serviços usando o QR Code como uma maneira principal de conectar usuários a diferentes serviços!
 
 ## Captura de tela
 ![alt img](Screenshots/Screenshot1.png)

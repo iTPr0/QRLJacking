@@ -1,199 +1,199 @@
 # QRLJacker - QRLJacking Exploitation Framework ![Build Status](https://img.shields.io/badge/Version-2.1.1-green.svg)
-### QRLJacker is a highly customizable exploitation framework to demonstrate "[QRLJacking Attack Vector](https://www.owasp.org/index.php/Qrljacking)" to show how it is easy to hijack services that depend on QR Code as an authentication and login method, Mainly it aims to raise the security awareness regarding all the services using the QR Code as a main way to login users to different services!
+### O QRLJacker é uma estrutura de exploração altamente personalizável para demonstrar "[QRLJacking Attack Vector](https://www.owasp.org/index.php/Qrljacking)" para mostrar como é fácil seqüestrar serviços que dependem do QR Code como um método de autenticação e login, o objetivo principal é aumentar a conscientização de segurança sobre todos os serviços usando o QR Code como uma maneira principal de conectar usuários a diferentes serviços!
 
-## Screenshot
+## Captura de tela
 ![alt img](Screenshots/Screenshot1.png)
-[Youtube Tutorial for installing and running it](https://www.youtube.com/watch?v=sYtH5-K2JZc)
+[Tutorial do YouTube para instalar e executá-lo](https://www.youtube.com/watch?v=sYtH5-K2JZc)
 
-## Prerequisites before installing:
-1. Linux or MacOS. (Not working on windows)
+## Pré-requisitos antes da instalação:
+1. Linux or MacOS. (Não está funcionando no Windows)
 2. Python 3.7+
 
-## Installing instructions:
-> Note: Don't install QRLJacker and Firefox as root in a regular user's session because it's not supported by Firefox which would give error on running modules in framework.
+## Instruções de instalação:
+> Nota: Não instale o QRLJacker e o Firefox como root em uma sessão normal do usuário, pois não é suportado pelo Firefox, o que causaria erro na execução de módulos na estrutura.
 
-***Important note: If you have multiple python version, use `python3.7` command instead of `python3` in the following steps and use `python3.7 -m pip` instead of `pip`, `pip3` or even `python3 -m pip` because that's the reason of 95% of the issues opened here. I think people often skip the important parts :smile:***
+***Nota importante: Se você possui várias versões python, use `python3.7` comando em vez de `python3` nas etapas a seguir e use `python3.7 -m pip` ao invés de `pip`, `pip3` ou mesmo `python3 -m pip` porque esse é o motivo de 95% dos problemas abertos aqui. Eu acho que as pessoas frequentemente pulam as partes importantes :smile:***
 
-1. Update Firefox browser to the latest version
-2. Install the latest geckodriver from https://github.com/mozilla/geckodriver/releases and extract the file then do :
+1. Atualize o navegador Firefox para a versão mais recente
+2. Instale o último geckodriver em https://github.com/mozilla/geckodriver/releases e extraia o arquivo e faça:
 	* `chmod +x geckodriver`
 	* `sudo mv -f geckodriver /usr/local/share/geckodriver`
 	* `sudo ln -s /usr/local/share/geckodriver /usr/local/bin/geckodriver`
 	* `sudo ln -s /usr/local/share/geckodriver /usr/bin/geckodriver`
-3. Clone the repo with `git clone https://github.com/OWASP/QRLJacking` then do `cd QRLJacking/QRLJacker`
-4. Install all the requirements with `pip install -r requirements.txt`
-5. Now you can run the framework with `python3 QrlJacker.py --help`
+3. Clone o repositório com `git clone https://github.com/OWASP/QRLJacking` então faça `cd QRLJacking/QRLJacker`
+4. Instale todos os requisitos com `pip install -r requirements.txt`
+5. Agora você pode executar a estrutura com `python3 QrlJacker.py --help`
 
-## Tested on
+## Testado em
 - Ubuntu 18.04 Bionic Beaver
-- Kali Linux 2018.x and up
+- Kali Linux 2018.x para cima
 
-## Usage
-### Commandline arguments
+## Uso
+### Argumentos da linha de comando
 ```
-usage: QrlJacker.py [-h] [-r ] [-x ] [--debug] [--dev] [--verbose] [-q]
+uso: QrlJacker.py [-h] [-r ] [-x ] [--debug] [--dev] [--verbose] [-q]
 
-optional arguments:
-  -h, --help  show this help message and exit
-  -r          Execute a resource file (history file).
-  -x          Execute a specific command (use ; for multiples).
-  --debug     Enables debug mode (Identifying problems easier).
-  --dev       Enables development mode (Reloading modules every use).
-  --verbose   Enables verbose mode (Display more details).
-  -q          Quit mode (no banner).
+argumentos opcionais:
+  -h, --help  mostre esta mensagem de ajuda e saia.
+  -r          Execute um arquivo de recurso (arquivo de histórico).
+  -x          Execute um comando específico (use; para múltiplos).
+  --debug     Ativa o modo de depuração (identificando problemas mais facilmente).
+  --dev       Ativa o modo de desenvolvimento (recarregando módulos a cada uso).
+  --verbose   Ativa o modo detalhado (Exibir mais detalhes).
+  -q          Saia do modo (sem banner).
 ```
-### Main menu help
+### Ajuda do menu principal
 ```
-General commands
+Comandos gerais
 =================
-	Command               Description
+	Comando               Descriação
 	---------             -------------
-	help/?                Show this help menu.
-	os      <command>     Execute a system command without closing the framework
-	banner                Display banner.
-	exit/quit             Exit the framework.
+	help/?                Mostre este menu de ajuda.
+	os      <command>     Execute um comando do sistema sem fechar a estrutura.
+	banner                Exibir banner.
+	exit/quit             Saia da estrutura.
 
-Core commands
+Comandos principais
 =============
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	database              Prints the core version, check if framework is up-to-date and update if you are not up-to-date.
-	debug                 Drop into debug mode or disable it. (Making identifying problems easier)
-	dev                   Drop into development mode or disable it. (Reload modules every use)
-	verbose               Drop into verbose mode or disable it. (Make framework displays more details)
-	reload/refresh        Reload the modules database.
+	database              Imprime a versão principal, verifique se a estrutura está atualizada e atualize se você não estiver atualizado.
+	debug                 Entre no modo de depuração ou desative-o. (Facilitando a identificação de problemas)
+	dev                   Entre no modo de desenvolvimento ou desative-o. (Recarregue os módulos a cada uso)
+	verbose               Entre no modo detalhado ou desative-o. (Make framework exibe mais detalhes)
+	reload/refresh        Recarregue o banco de dados dos módulos.
 
-Resources commands
+Comandos de recursos
 ==================
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	history               Display commandline most important history from the beginning.
-	makerc                Save the most important commands entered since start to a file.
-	resource  <file>      Run the commands stored in a file.
+	history               Exiba o histórico mais importante da linha de comando desde o início.
+	makerc                Salve os comandos mais importantes inseridos desde o início em um arquivo.
+	resource  <file>      Execute os comandos armazenados em um arquivo.
 
-Sessions management commands
+Comandos de gerenciamento de sessões
 ============================
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	sessions (-h)         Dump session listings and display information about sessions.
-	jobs     (-h)         Displays and manages jobs.
+	sessions (-h)         Despejar listagens de sessão e exibir informações sobre sessões.
+	jobs     (-h)         Exibe e gerencia trabalhos.
 
-Module commands
+Comandos do módulo
 ===============
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	list/show             List modules you can use.
-	use      <module>     Use an available module.
-	info     <module>     Get information about an available module.
-	previous              Runs the previously loaded module.
-	search   <text>       Search for a module by a specific text in its name or in its description.
+	list/show             Liste os módulos que você pode usar.
+	use      <module>     Use um módulo disponível.
+	info     <module>     Obtenha informações sobre um módulo disponível.
+	previous              Executa o módulo carregado anteriormente.
+	search   <text>       Procure um módulo com um texto específico em seu nome ou em sua descrição.
 ```
-### Module menu help
+### Ajuda do menu do módulo
 ```
-General commands
+Comandos gerais
 =================
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	help/?                Show this help menu.
-	os      <command>     Execute a system command without closing the framework
-	banner                Display banner.
-	exit/quit             Exit the framework.
+	help/?                Mostre este menu de ajuda.
+	os      <command>     Execute um comando do sistema sem fechar a estrutura.
+	banner                Exibir banner.
+	exit/quit             Saia da estrutura.
 
-Core commands
+Comandos principais
 =============
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	database              Prints the core version and then check if it's up-to-date.
-	debug                 Drop into debug mode or disable it. (Making identifying problems easier)
-	dev                   Drop into development mode or disable it. (Reload modules every use)
-	verbose               Drop into verbose mode or disable it. (Make framework displays more details)
-	reload/refresh        Reload the modules database.
+	database              Imprime a versão principal e, em seguida, verifique se está atualizada.
+	debug                 Entre no modo de depuração ou desative-o. (Facilitando a identificação de problemas)
+	dev                   Entre no modo de desenvolvimento ou desative-o. (Recarregue os módulos a cada uso)
+	verbose               Entre no modo detalhado ou desative-o. (Make framework exibe mais detalhes)
+	reload/refresh        Recarregue o banco de dados dos módulos.
 
-Resources commands
+Comandos de recursos
 ==================
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	history               Display commandline most important history from the beginning.
-	makerc                Save the most important commands entered since start to a file.
-	resource  <file>      Run the commands stored in a file.
+	history               Exiba o histórico mais importante da linha de comando desde o início.
+	makerc                Salve os comandos mais importantes inseridos desde o início em um arquivo.
+	resource  <file>      Execute os comandos armazenados em um arquivo.
 
-Sessions management commands
+Comandos de gerenciamento de sessões
 ============================
-	Command               Description
+	Comando               Descrição
 	---------             -------------
-	sessions (-h)         Dump session listings and display information about sessions.
-	jobs     (-h)         Displays and manages jobs.
+	sessions (-h)         Despejar listagens de sessão e exibir informações sobre sessões.
+	jobs     (-h)         Exibe e gerencia trabalhos.
 
-Module commands
+Comandos do módulo
 ===============
-	Command               Description
+	Comando               Descrição
 	----------            --------------
-	list/show             List modules you can use.
-	options               Displays options for the current module.
-	set                   Sets a context-specific variable to a value.
-	run                   Launch the current module.
-	use     <module>      Use an available module.
-	info    <module>      Get information about an available module.
-	search  <text>        Search for a module by a specific text in its name or in its description.
-	previous              Sets the previously loaded module as the current module.
-	back                  Move back from the current context.
+	list/show             Liste os módulos que você pode usar.
+	options               Exibe opções para o módulo atual.
+	set                   Define uma variável específica do contexto para um valor.
+	run                   Inicie o módulo atual.
+	use     <module>      Use um módulo disponível.
+	info    <module>      Obtenha informações sobre um módulo disponível.
+	search  <text>        Procure um módulo com um texto específico em seu nome ou em sua descrição.
+	previous              Define o módulo carregado anteriormente como o módulo atual.
+	back                  Volte do contexto atual.
 ```
-### Sessions command help menu
+### Menu de Ajuda do Comando Sessões
 ```
-usage: sessions [-h] [-l] [-K] [-s] [-k] [-i]
+uso: sessões [-h] [-l] [-K] [-s] [-k] [-i]
 
-optional arguments:
-  -h   Show this help message.
-  -l   List all captured sessions.
-  -K   Remove all captured sessions.
-  -s   Search for sessions with a specifed type.
-  -k   Remove a specifed captured session by ID
-  -i   Interact with a captured session by ID.
+argumentos opcionais:
+  -h   Mostre esta mensagem de ajuda.
+  -l   Listar todas as sessões capturadas.
+  -K   Remova todas as sessões capturadas.
+  -s   Procure por sessões com um tipo especificado.
+  -k   Remover uma sessão capturada especificada por ID.	
+  -i   Interaja com uma sessão capturada por ID.
 ```
-### Jobs command help menu
+### Menu de ajuda do comando Jobs
 ```
-usage: jobs [-h] [-l] [-K] [-k]
+uso: jobs [-h] [-l] [-K] [-k]
 
-optional arguments:
-  -h   Show this help message.
-  -l   List all running jobs.
-  -K   Terminate all running jobs.
-  -k   Terminate jobs by job ID or module name
+argumentos opcionais:
+  -h   Mostre esta mensagem de ajuda.
+  -l   Listar todos os trabalhos em execução.
+  -K   Encerre todos os trabalhos em execução.
+  -k   Encerrar trabalhos por ID do trabalho ou nome do módulo.
 ```
 
-## Taking advantage of the core
-### Commands autocomplete
-The autocomplete feature that has been implemented in this framework is not the usual one you always see, here are some highlights:
+## Aproveitando o núcleo
+### Comandos de preenchimento automático
+O recurso de preenchimento automático implementado nessa estrutura não é o habitual que você sempre vê, aqui estão alguns destaques:
 
-1. It's designed to fix typos in typed commands to the most similar command with just one tab click so `saerch` becomes `search` and so on, even if you typed any random word similar to an command in this framework.
+1. Ele foi projetado para corrigir erros de digitação nos comandos digitados no comando mais semelhante com apenas um clique na guia para `saerch` torna-se `search` e assim por diante, mesmo se você digitar qualquer palavra aleatória semelhante a um comando nesta estrutura.
 
-2. For you lazy-ones out there like me, it can predict what module you are trying to use by typing any part of it. For example if you typed `use wh` and clicked tab, it would be replaced with `use grabber/whatsapp` and so on. I can see your smile, You are welcome!
+2. Para vocês preguiçosos como eu, pode prever qual módulo você está tentando usar digitando qualquer parte dele. Por exemplo, se você digitou `use wh` e clique na guia, ela seria substituída por `use grabber/whatsapp` e assim por diante. Eu posso ver seu sorriso, de nada!
 
-3. If you typed any wrong command then pressed enter, the framework will tell you what is the nearest command to what you have typed which could be the one you really wanted.
+3. Se você digitou algum comando errado e pressionou enter, a estrutura informará qual é o comando mais próximo do que você digitou, que pode ser o que você realmente deseja.
 
-4. Some less impressive things like autocomplete for options of the current module after `set` command, autocomplete for modules after `use` and `info` commands and finally it converts all uppercase to lowercase automatically just-in-case you switched cases by mistake while typing.
+4. Algumas coisas menos impressionantes, como o preenchimento automático para opções do módulo atual após `set` comando, preenchimento automático de módulos após `use` e `info` comandos e, finalmente, converte todas as maiúsculas para minúsculas automaticamente, caso você tenha trocado de caso por engano ao digitar.
 
-5. Finally, you'll find your normal autocopmletion things you were using before, like commands autocompletion and persistent history, etc...
-
-
-## Automation
-- As you may noticed, you can use a resource file from command-line arguments before starting the framework itself or send commands directly.
-- Inside the framework you can use `makerc` command like in Metasploit but this time it only saves the correct important commands.
-- There are `history` and `resource` commands so you don't need to exit the framework.
-- You can execute as many commands as you want at the same time by splitting them with semi-colon and many more left to be discovered by yourself.
-- Searching for modules in QRLJacker is so easy, you can search for a module by its name, something written in its description or even the author name.
+5. Por fim, você encontrará as coisas normais de autocoplet que estava usando antes, como comandos de preenchimento automático e histórico persistente, etc...
 
 
-## Reporting an issue
-- Before reporting an issue, activate the debug mode by using the `debug` command or the debug commandline argument and once the error happens again, the framework will print the error trace-back. Also debug mode activates some hidden commands which will help us in debugging the error and fix the problem for you.
-- Finally, make sure when reporting the issue to provide the very basic info like your system, python version and the output from the debugging mode.
+## Automação
+- Como você notou, você pode usar um arquivo de recurso a partir de argumentos da linha de comando antes de iniciar a própria estrutura ou enviar comandos diretamente.
+- Dentro da estrutura, você pode usar `makerc` comando como no Metasploit, mas desta vez ele salva apenas os comandos importantes corretos.
+- Tem `history` e `resource` comandos para que você não precise sair da estrutura.
+- Você pode executar quantos comandos quiser ao mesmo tempo, dividindo-os com ponto-e-vírgula e muito mais para descobrir por si mesmo.
+- A pesquisa de módulos no QRLJacker é tão fácil que você pode procurar um módulo pelo nome, algo escrito em sua descrição ou até mesmo pelo nome do autor.
 
-## Development
-If you want to write your own module, read [the development docs from here](docs/README.md)
 
-## Future ToDos:
-1. Write modules for other websites and services.
-2. Write post-exploitation modules for the framework.
+## Relatar um problema
+- Antes de relatar um problema, ative o modo de depuração usando o comando `debug` comando ou o argumento de linha de comando debug e quando o erro ocorrer novamente, a estrutura imprimirá o rastreio do erro. Além disso, o modo de depuração ativa alguns comandos ocultos que nos ajudarão na depuração do erro e na correção do problema.
+- Por fim, certifique-se de que, ao relatar o problema, forneça informações muito básicas, como seu sistema, versão python e a saída do modo de depuração.
+
+## Desenvolvimento
+Se você deseja escrever seu próprio módulo, leia [os documentos de desenvolvimento a partir daqui](docs/README.md)
+
+## Futuro ToDos:
+1. Escreva módulos para outros sites e serviços.
+2. Escreva módulos de pós-exploração para a estrutura.
 3. TBD
 
 ## OWASP's links reference

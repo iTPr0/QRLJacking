@@ -8,7 +8,7 @@
 
 Encontre documentação em nosso [Wiki](https://github.com/OWASP/QRLJacking/wiki).
 ## O que é o QRLJacking?
-O QRLJacking ou o código de resposta rápida Login Jacking é um vetor de ataque de engenharia social simples capaz de seqüestrar sessões afetando todos os aplicativos que dependem do recurso "Login com código QR" como uma maneira segura de acessar contas. Em poucas palavras, a vítima escaneia o código QR do invasor, o que resulta no seqüestro da sessão.
+O QRLJacking ou o código de resposta rápida Login Jacking é um vetor de ataque de engenharia social simples capaz de seqüestrar sessões afetando todos os aplicativos que dependem do recurso "Login com QR Code" como uma maneira segura de acessar contas. Em poucas palavras, a vítima escaneia o QR Code do invasor, o que resulta no seqüestro da sessão.
 
 
 ## Exploração, Configuração do lado do cliente (navegador do atacante):

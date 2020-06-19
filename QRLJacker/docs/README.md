@@ -1,10 +1,10 @@
-Well, I worked so hard to make the development as simple as possible and you will see that :smile:
-> before starting make sure you turned the development mode on. If you done so, the framework will reload the module every time you run it with the new changes without needing to restart the framework
+Bem, trabalhei duro para tornar o desenvolvimento o mais simples possível e você verá que :smile:
+> Antes de começar, verifique se você ativou o modo de desenvolvimento. Se você fez isso, a estrutura recarregará o módulo toda vez que você executá-lo com as novas alterações sem precisar reiniciar a estrutura
 
-# Writing a grabber module for the Framework
-- Grabber modules are the main modules in the framework and it lies in the directory `core/modules/grabber`
-- Once you add any python file there, it gets loaded into the framework with three options automatically. The three options are (of course) host, port and useragent
-- The code inside the module file should be as follows:
+# Escrevendo um módulo de captura para o Framework
+- Grabber Os módulos são os principais módulos da estrutura e estão no diretório `core/modules/grabber`
+- Depois de adicionar qualquer arquivo python, ele é carregado na estrutura com três opções automaticamente. As três opções são (é claro) host, porta e useragent
+- O código dentro do arquivo do módulo deve ser o seguinte:
 
 ```
 # -*- coding: utf-8 -*-
@@ -26,15 +26,15 @@ class execution:
 
 ```
 
-The code variables is described below:
-1. Here you add your name which will appear in the framework
-2. Here you put a quick short description which will appear when listing the Modules
-3. Here you put the full Description to your module if it's necessary and it will appear only when using the `info` command. If you won't add one, leave it as None and the short description will be used instead.
-4. The name of the website which will be used inside the framework and also you should create a folder with the same name as the variable value in the path `core/www` example: `core/www/whatsapp`
-5. The Url which have the QR code and used to load the session example: `https://web.whatsapp.com`
-6. The exact xpath to the QR image position in the page because it will be used by the framework to screenshot the QR code image.
-7. If this websites checks for idle and wants you to click refresh every few minutes like whatsapp for example then put the exact xpath for this button when it appears and the framework will run a thread to check every few seconds the reload button appearance then click it. If this technique isn't used, leave the variable as None.
-8. The xpath of an element in the page disappears only when the session loads. For example the QR code img tag in whatsapp.
-9. This variable takes one of two values `localStorage` or `Cookies`. The value should be the same used in the website to determine user session.
+As variáveis ​​de código são descritas abaixo:
+1. Aqui você adiciona seu nome que aparecerá na estrutura
+2. Aqui você coloca uma breve descrição rápida que aparecerá ao listar os Módulos
+3. Aqui você coloca a Descrição completa em seu módulo, se necessário, e ela aparecerá apenas ao usar o `info` comando. Se você não adicionar um, deixe-o como Nenhum e a breve descrição será usada.
+4. O nome do site que será usado dentro da estrutura e também você deve criar uma pasta com o mesmo nome que o valor da variável no caminho `core/www` exemplo: `core/www/whatsapp`
+5. O URL que possui o QR Code e usado para carregar o exemplo da sessão: `https://web.whatsapp.com`
+6. O xpath exato para a posição da imagem QR na página, porque ele será usado pela estrutura para capturar a imagem da imagem QR.
+7. Se este site estiver inativo e quiser que você clique em atualizar a cada poucos minutos como o whatsapp, por exemplo, coloque o xpath exato para esse botão quando ele aparecer e a estrutura executará um thread para verificar a cada poucos segundos a aparência do botão recarregar e clique nele. Se essa técnica não for usada, deixe a variável como Nenhuma.
+8. O xpath de um elemento na página desaparece apenas quando a sessão é carregada. Por exemplo, a tag img do QR Code no whatsapp.
+9. Essa variável assume um dos dois valores `localStorage` ou `Cookies`. O valor deve ser o mesmo usado no site para determinar a sessão do usuário.
 
-And voilaaa! You have created your first module. You can keep it for yourself or better make a PR to the framework so everyone can use your module with your name on it, do the math :smile:
+E pronto! Você criou seu primeiro módulo. Você pode mantê-lo por conta própria ou melhor criar um PR para a estrutura, para que todos possam usar seu módulo com o seu nome, faça as contas :smile:
